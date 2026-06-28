@@ -4,13 +4,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BaseClass {
-    public WebDriver driver;
+    public static WebDriver driver;
     public void launchApplication(){
         driver= new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.flipkart.com/");
 
     }
+    public static WebDriver getDriver(){
+        return driver;
+    }
+
     public void closeApplication(){
         if (driver != null) {
             driver.quit();
