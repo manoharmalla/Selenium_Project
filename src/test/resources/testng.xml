@@ -3,6 +3,7 @@
 <suite name="Automation Suite">
     <listeners>
         <listener class-name="listeners.TestListener"/>
+        <listener class-name="retry.retryTransfer"/>
     </listeners>
 
     <test name="Launch Application Test">
@@ -21,5 +22,22 @@
         </classes>
 
     </test>
+    <test name="verify login page">
 
+        <classes>
+
+            <class name="tests.LoginTest"/>
+        </classes>
+
+    </test>
+    <test name="verify Nikon camera product">
+        <classes>
+            <class name="tests.CameraProductTest"/>
+        </classes>
+    </test>
+    <test name="verify IZI gimbal product">
+        <classes>
+            <class name="tests.IziGimbalTest"/>
+        </classes>
+    </test>
 </suite>

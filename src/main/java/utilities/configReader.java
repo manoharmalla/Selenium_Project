@@ -18,7 +18,7 @@ public class configReader {
             e.printStackTrace();
         }
     }
-    public static String getProperty(String mobile){
-       return properties.getProperty(mobile);
+    public static String getProperty(String key){
+       return properties.getProperty(key);
     }
 }

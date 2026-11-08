@@ -6,7 +6,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class BaseClass {
     public static WebDriver driver;
     public void launchApplication(){
-        driver= new ChromeDriver();
+        if (driver != null) {
+            driver.quit();
+        }
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.flipkart.com/");
 
@@ -18,6 +21,7 @@ public class BaseClass {
     public void closeApplication(){
         if (driver != null) {
             driver.quit();
+            driver = null;
         }
     }
     public String getTitle(){

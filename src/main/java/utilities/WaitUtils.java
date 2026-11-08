@@ -23,4 +23,15 @@ public class WaitUtils {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
+    public String waitForNewWindow(String currentWindow) {
+        return wait.until(driver -> driver.getWindowHandles().stream()
+                .filter(window -> !window.equals(currentWindow))
+                .findFirst()
+                .orElse(null));
+    }
+
+    public void waitForTitleContains(String title) {
+        wait.until(ExpectedConditions.titleContains(title));
+    }
+
 }

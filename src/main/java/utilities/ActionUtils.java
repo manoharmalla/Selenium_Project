@@ -19,5 +19,9 @@ public class ActionUtils {
         wait.waitForVisibility(element);
         element.click();
     }
+    public void moveToElement(WebElement element){
+        wait.waitForVisibility(element);
+        action.moveToElement(element);
+    }
 
 }
